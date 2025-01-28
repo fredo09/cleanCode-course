@@ -1,5 +1,5 @@
 (() => {
-    // No aplicando el principio de responsabilidad única
+    // * No aplicando el principio de responsabilidad única
     type Gender = 'M' | 'F';
     class Person {
         constructor(
