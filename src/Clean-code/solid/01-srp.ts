@@ -23,7 +23,10 @@
         private masterEmail: string = "test1@gmail.com";
 
         sendEmail( email: string, message: string ) {
-            console.log("🚀 ~ Enviando correo a: ", email);
+            console.log("🚀 ~ Enviando correo a: ", {
+				email,
+				message
+			});
         }
     }
     
