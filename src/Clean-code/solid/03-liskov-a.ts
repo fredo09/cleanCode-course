@@ -1,4 +1,4 @@
-import { Tesla, Audi, Toyota, Honda, Volkswagen, Vehicle } from './03-liskov-b';
+import { Tesla, Audi, Toyota, Honda, Volkswagen, Vehicle, Ford } from './03-liskov-b';
 
 (() => {
     
@@ -12,7 +12,6 @@ import { Tesla, Audi, Toyota, Honda, Volkswagen, Vehicle } from './03-liskov-b';
 		 * Aplicando el principio de Siemptete Abierto/Cerrado
 		 */
         // for (const car of cars) {
-         
         //     if( car instanceof Tesla ) {
         //         console.log( 'Tesla', car.getNumberOfSeats() )
         //         continue;
@@ -42,8 +41,8 @@ import { Tesla, Audi, Toyota, Honda, Volkswagen, Vehicle } from './03-liskov-b';
         new Toyota(5),
         new Honda(5),
 		new Volkswagen(5),
+		new Ford(4)
     ];
 
     printCarSeats( cars );
-
 })();

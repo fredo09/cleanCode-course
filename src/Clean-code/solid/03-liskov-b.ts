@@ -22,10 +22,6 @@ export class Tesla extends Vehicle{
 		super();
 	}
 
-    // getNumberOfTeslaSeats() {
-    //     return this.numberOfSeats;
-    // }
-
 	getNumberOfSeats(): number {
 		return this.numberOfSeats;
 	}
@@ -36,10 +32,6 @@ export class Audi extends Vehicle {
     constructor( private numberOfSeats: number ) {
 		super();
 	}
-
-    // getNumberOfAudiSeats() {
-    //     return this.numberOfSeats;
-    // }
 
 	getNumberOfSeats(): number {
 		return this.numberOfSeats;
@@ -52,10 +44,6 @@ export class Toyota extends Vehicle{
 		super();
 	}
 
-    // getNumberOfToyotaSeats() {
-    //     return this.numberOfSeats;
-    // }
-
 	getNumberOfSeats(): number {
 		return this.numberOfSeats;
 	}
@@ -66,10 +54,6 @@ export class Honda extends Vehicle{
     constructor( private numberOfSeats: number ) {
 		super();
 	}
-
-    // getNumberOfHondaSeats() {
-    //     return this.numberOfSeats;
-    // }
 
 	getNumberOfSeats(): number {
 		return this.numberOfSeats;
@@ -82,11 +66,17 @@ export class Volkswagen extends Vehicle{
 		super();
 	}
 
-    // getNumberOfVolkswagenSeats() {
-    //     return this.numberOfSeats;
-    // }
-
 	getNumberOfSeats(): number {
 		return this.numberOfSeats;
+	}
+}
+
+export class Ford extends Vehicle {
+	constructor( private numberOfSeats: number){
+		super();
+	}
+
+	getNumberOfSeats(): number {
+		return this.numberOfSeats
 	}
 }
