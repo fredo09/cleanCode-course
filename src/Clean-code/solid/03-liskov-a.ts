@@ -1,29 +1,39 @@
-import { Tesla, Audi, Toyota, Honda } from './03-liskov-b';
+import { Tesla, Audi, Toyota, Honda, Volkswagen, Vehicle } from './03-liskov-b';
 
 (() => {
     
-    const printCarSeats = ( cars: (Tesla | Audi | Toyota | Honda)[] ) => {
+    const printCarSeats = ( cars: Vehicle[] ) => {
         
-        for (const car of cars) {
-         
-            if( car instanceof Tesla ) {
-                console.log( 'Tesla', car.getNumberOfTeslaSeats() )
-                continue;
-            }
-            if( car instanceof Audi ) {
-                console.log( 'Audi', car.getNumberOfAudiSeats() )
-                continue;
-            }
-            if( car instanceof Toyota ) {
-                console.log( 'Toyota', car.getNumberOfToyotaSeats() )
-                continue;
-            }
-            if( car instanceof Honda ) {
-                console.log( 'Honda', car.getNumberOfHondaSeats() )
-                continue;
-            }         
+		cars.forEach(car => {
+			console.log(`${car.constructor.name}: `, car.getNumberOfSeats())
+		});
 
-        }
+		/**
+		 * Aplicando el principio de Siemptete Abierto/Cerrado
+		 */
+        // for (const car of cars) {
+         
+        //     if( car instanceof Tesla ) {
+        //         console.log( 'Tesla', car.getNumberOfSeats() )
+        //         continue;
+        //     }
+        //     if( car instanceof Audi ) {
+        //         console.log( 'Audi', car.getNumberOfSeats() )
+        //         continue;
+        //     }
+        //     if( car instanceof Toyota ) {
+        //         console.log( 'Toyota', car.getNumberOfSeats() )
+        //         continue;
+        //     }
+        //     if( car instanceof Honda ) {
+        //         console.log( 'Honda', car.getNumberOfSeats() )
+        //         continue;
+        //     } 
+		// 	if( car instanceof Volkswagen ) {
+        //         console.log( 'Volkswagen', car.getNumberOfSeats() )
+        //         continue;
+        //     }
+        // }
     }
     
     const cars = [
@@ -31,6 +41,7 @@ import { Tesla, Audi, Toyota, Honda } from './03-liskov-b';
         new Audi(2),
         new Toyota(5),
         new Honda(5),
+		new Volkswagen(5),
     ];
 
     printCarSeats( cars );
