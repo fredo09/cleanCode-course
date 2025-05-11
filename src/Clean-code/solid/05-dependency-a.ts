@@ -1,9 +1,11 @@
 import { PostService } from './05-dependency-b';
-import { JsonDataBaseService } from './05-dependency-c';
+import { JsonDataBaseService, LocalDataBaseService, WebApiService } from './05-dependency-c';
 
 // Main
 (async () => {
-	const providerJsonDb = new JsonDataBaseService();
+	// const providerJsonDb = new LocalDataBaseService();
+	// const providerJsonDb = new JsonDataBaseService();
+	const providerJsonDb = new WebApiService();
 
     const postService = new PostService(
 		providerJsonDb
@@ -11,5 +13,5 @@ import { JsonDataBaseService } from './05-dependency-c';
 
     const posts = await postService.getPosts();
 
-    console.log({ posts })
+    console.log({ posts });
 })();
