@@ -1,3 +1,10 @@
+import localPost from './../../dataBase/local-database.json'
+
+/**
+ * Usamos injeccion de dependencias pero algo le falta y se trata de la inversion de dependencias ya que el principio de la inverison de dependencias dice que las clases de alto nivel no deben depender de las clases de bajo nivel, ambas deben depender de abstracciones.
+ * Y Solo es implmentacion mas no abstraccion.
+ */
+
 export class LocalDataBaseService {
 
     constructor() {}
@@ -18,4 +25,11 @@ export class LocalDataBaseService {
             }]
     }
 
+}
+
+
+export class JsonDataBaseService {
+	async getPosts () {
+		return localPost;
+	}
 }

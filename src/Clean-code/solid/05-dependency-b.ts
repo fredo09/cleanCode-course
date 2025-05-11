@@ -1,6 +1,7 @@
 import { LocalDataBaseService } from "./05-dependency-c";
+import { JsonDataBaseService } from './05-dependency-c';
 
-interface Post {
+export interface Post {
     body:   string;
     id:     number;
     title:  string;
@@ -12,12 +13,16 @@ export class PostService {
 
     private posts: Post[] = [];
 
-    constructor() {}
+    constructor(
+		private psotProvider: JsonDataBaseService
+	) {}
 
     async getPosts() {
-        const jsonDB = new LocalDataBaseService();
-        this.posts = await jsonDB.getFakePosts();
-
+		// !Esto es usando el ejemplode injecion de dependencias pero le falta algo mas
+        // const jsonDB = new LocalDataBaseService();
+		// const jsonDB = new JsonDataBaseService();
+        // this.posts = await jsonDB.getPosts();
+        this.posts = await this.psotProvider.getPosts();
         return this.posts;
     }
 }
